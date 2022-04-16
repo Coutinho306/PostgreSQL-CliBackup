@@ -9,6 +9,6 @@ def s3(client, infile, bucket, name):
 def gcs(client, infile, bucket, name):
     bucket_name = client.bucket(bucket)
     blob = bucket_name.blob(name)
-    blob.upload_from_string(infile.read())
+    blob.upload_from_file(infile.read())
     infile.close()
 
